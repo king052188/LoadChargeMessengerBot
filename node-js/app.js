@@ -110,9 +110,8 @@ function handleMessage(sender_psid, received_message) {
     }
     else if(msg.includes("LC")) {
       data = msg;
-      datas = data.split(" ");
-      if(datas[1].includes("LINK")) {
-        link(sender_psid, datas[2]);
+      if(data.includes("LINK")) {
+        link(sender_psid, data);
       }
       else {
         command(sender_psid, data);
@@ -282,7 +281,14 @@ function register(sender_psid, code) {
   });
 }
 
-function link(sender_psid, mobile) {
+function link(sender_psid, data) {
+  var datas = data.split(" ");
+  if(datas.length < 3) {
+    console.log("Invalid command. Please try again.");
+    handleMessageSend(sender_psid, "Invalid command. Please try again.");
+    return false;
+  }
+  var mobile = datas[2];
   if(mobile.length != 11) {
     console.log("Invalid mobile number.");
     handleMessageSend(sender_psid, "Invalid mobile number 1.");
