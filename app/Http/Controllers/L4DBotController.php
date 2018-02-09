@@ -249,7 +249,7 @@ class L4DBotController extends Controller
       ->update(
         array("facebook_id" => $fb_id)
       );
-      
+
       if($d) {
         return array(
           'status' => 200,
@@ -309,7 +309,7 @@ class L4DBotController extends Controller
       $duid = $dealer[0]->Id;
       $company_id = $dealer[0]->company_id;
 
-      $new_member = $helper->get_user_info($company_id, $mobile);
+      $new_member = $helper->get_user_info($company_id, $mobile, true);
       if(COUNT($new_member) > 0) {
         return array(
           'status' => 401,

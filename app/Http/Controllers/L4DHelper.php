@@ -210,13 +210,23 @@ class L4DHelper extends Controller
       );
     }
 
-    public function get_user_info($company_id, $user_account) {
-      $dealer = DB::select("
-        SELECT * FROM tbl_dealers
-        WHERE company_id = {$company_id}
-        AND facebook_id = '{$user_account}'
-        OR mobile = '{$user_account}';
-      ");
+    public function get_user_info($company_id, $user_account, $isMobile = false) {
+
+      if($isMobile) {
+        $dealer = DB::select("
+          SELECT * FROM tbl_dealers
+          WHERE company_id = {$company_id}
+          AND mobile = '{$user_account}';
+        ");
+      }
+      else {
+        $dealer = DB::select("
+          SELECT * FROM tbl_dealers
+          WHERE company_id = {$company_id}
+          AND facebook_id = '{$user_account}'
+        ");
+      }
+
       return $dealer;
     }
 
