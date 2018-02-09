@@ -1,0 +1,11 @@
+  // 20180124201119
+// http://api-load4wrd.kpa.ph/SMARTLoad.aspx?target=09995233848&amount=W5
+
+{
+  "topupResultCode": 0,
+  "topupResultCodeDesc": "Request Approved And Queued For Commit",
+  "topupSessionID": "D64CF71E15CB29060740C4CB2214E6C5045F3233",
+  "commitResultCode": 0,
+  "commitResultCodeDesc": "Commit Approved And Queued For Processes",
+  "commitSessionID": "15857789A81CDAF239E6D5605895ADEC19D3F5CF"
+}
