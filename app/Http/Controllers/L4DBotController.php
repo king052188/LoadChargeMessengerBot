@@ -359,7 +359,7 @@ class L4DBotController extends Controller
       $wallet = $helper->get_wallet_summary($duid);
       $available = (float)$wallet["wallet"][0]->available;
 
-      $recipient = $helper->get_user_info($company_id, $mobile);
+      $recipient = $helper->get_user_info($company_id, $mobile, true);
       if(COUNT($recipient) == 0) {
         return array(
           'status' => 401,
