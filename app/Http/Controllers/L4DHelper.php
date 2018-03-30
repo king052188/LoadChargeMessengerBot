@@ -33,9 +33,6 @@ class L4DHelper extends Controller
       do {
         $uuid = Uuid::uuid4();
         $guid = $uuid->toString();
-
-
-
       }while($c != null);
       return $guid;
     }
@@ -127,7 +124,7 @@ class L4DHelper extends Controller
                 case "0996":
                 case "0997":
                 case "0817":
-                    $net = "INVALID";
+                    $net = "GLOBE";
                     break;
                 case "0922":
                 case "0923":
