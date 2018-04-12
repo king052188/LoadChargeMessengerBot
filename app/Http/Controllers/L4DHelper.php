@@ -397,6 +397,39 @@ class L4DHelper extends Controller
       return $result;
     }
 
+    public function curl_execute_load4wrd($target, $keyword) {
+      $username = config('app.l4dUsername');
+      $password = config('app.l4dPassword');
+      $authorization = base64_encode($username . ":" . $password);
+
+      //api url
+      $url = "https://load4wrd.kpa.ph/api/v1/load";
+
+      // Array to Json
+      $data = array(
+        "target" => $target,
+        "code" => $keyword
+      );
+      $to_json = json_encode($data);
+
+      // Added JSON Header
+      $headers = array(
+        "Authorization: Basic ". $authorization,
+        "Content-Type: application/json"
+      );
+
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $to_json);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      $result = json_decode(curl_exec($ch), true);
+      curl_close($ch);
+
+      return $result;
+    }
+
     public function toINT($value) {
       $r = -0;
       try {

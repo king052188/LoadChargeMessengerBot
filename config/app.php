@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'l4dUsername' => env('L4D_USERNAME', 'Your-Username'),
+
+    'l4dPassword' => env('L4D_PASSWORD', 'Your-Password'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
