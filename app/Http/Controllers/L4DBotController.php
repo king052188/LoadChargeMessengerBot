@@ -11,6 +11,8 @@ use App\ProductCode;
 use Carbon\Carbon;
 use DB;
 
+use PollyCodes\Load4wrd\Loading;
+
 class L4DBotController extends Controller
 {
     public static $CMDPrefix;
@@ -779,6 +781,13 @@ class L4DBotController extends Controller
         );
       }
 
+      return $json;
+    }
+
+
+    public function load4wrd_send($target, $code) {
+      $loading = new Loading();
+      $json = $loading->Send("", "");
       return $json;
     }
 

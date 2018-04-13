@@ -35,4 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'load4wrd' => [
+          'username' => env('L4D_USERNAME', 'Your-Username'),
+          'password' => env('L4D_PASSWORD', 'Your-Password'),
+      ],
+
 ];

@@ -181,6 +181,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        PollyCodes\Load4wrd\Load4wrdServiceProvider::class,
+
     ],
 
     /*
@@ -229,6 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Load4wrd' => PollyCodes\Load4wrd\Facades\Load4wrd::class,
 
     ],
 
