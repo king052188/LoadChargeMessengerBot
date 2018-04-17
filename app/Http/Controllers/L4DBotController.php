@@ -548,24 +548,21 @@ class L4DBotController extends Controller
       $fb_id = $request->fb_id;
       $reference = $request->reference;
       $target = $request->target;
-      $keyword = $request->code;
+      $code = $request->code;
       $amount = (float)$request->amount;
-      $network = L4DHelper::prefix($target);
-
-      // dd($reference);
 
       $dealer = DB::select("SELECT * FROM tbl_dealers WHERE company_id = {$company_id} AND facebook_id = '{$fb_id}' OR mobile = '{$fb_id}';");
       $duid = $dealer[0]->Id;
 
-      $param = "network={$network}&target={$target}&code={$keyword}";
-      $load_results = $helper->curl_execute(null, "/execute-load-command.aspx?{$param}");
+      $loading = new Loading();
+      $json = $loading->Send($target, $code);
 
-      // dd($load_results);
-
-      if($load_results["status"] == 200) {
-        $committed = $load_results["committed"];
-        $verified = $load_results["verified"];
-        $topup_transaction = $committed["topupSessionID"];
+      if($json["status"] == 200) {
+        $topup_reference = $json["reference"];
+        $network = $json["network"];
+        $target = $json["target"];
+        $code = $json["code"];
+        $amount = $json["amount"];
 
         // update load logs
         $logs = $helper->update_loadlogs($reference, 1);
@@ -577,9 +574,9 @@ class L4DBotController extends Controller
         $l = $helper->add_loading_transaction(
           $reference,
           L4DHelper::network($network),
-          $topup_transaction,
+          $topup_reference,
           $target,
-          $keyword,
+          $code,
           $amount
         );
 
@@ -783,15 +780,6 @@ class L4DBotController extends Controller
 
       return $json;
     }
-
-
-    public function load4wrd_send($target, $code) {
-      $loading = new Loading();
-      $json = $loading->Send("", "");
-      return $json;
-    }
-
-
 
 
 

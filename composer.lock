@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d3b016b0a5692aaa5aa5824b91b96f5",
+    "content-hash": "622933eba45746fa242d41537fa04b4e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -812,16 +812,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.25.0",
+            "version": "1.26.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
+                "reference": "b63c0d809256a434ea74e6b41ca5f5f9d16220e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b63c0d809256a434ea74e6b41ca5f5f9d16220e6",
+                "reference": "b63c0d809256a434ea74e6b41ca5f5f9d16220e6",
                 "shasum": ""
             },
             "require": {
@@ -833,14 +833,9 @@
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.23-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -861,7 +856,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-19T15:50:49+00:00"
+            "time": "2018-04-16T14:54:26+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -964,19 +959,24 @@
         },
         {
             "name": "pollycodes/load4wrd",
-            "version": "dev-master",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pollycodes/load4wrd.git",
-                "reference": "d84860838994d85827926624966263a0d846e192"
+                "reference": "c6fe8a7ed0c192625db6ad379cc4bc52099b06f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pollycodes/load4wrd/zipball/d84860838994d85827926624966263a0d846e192",
-                "reference": "d84860838994d85827926624966263a0d846e192",
+                "url": "https://api.github.com/repos/pollycodes/load4wrd/zipball/c6fe8a7ed0c192625db6ad379cc4bc52099b06f2",
+                "reference": "c6fe8a7ed0c192625db6ad379cc4bc52099b06f2",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PollyCodes\\Load4wrd\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -988,7 +988,11 @@
                 }
             ],
             "description": "Load4wrd is a tool for E-Loading Business for 3 networks in the Philippines.",
-            "time": "2018-04-12T13:20:20+00:00"
+            "keywords": [
+                "laravel",
+                "library"
+            ],
+            "time": "2018-04-16T06:47:42+00:00"
         },
         {
             "name": "psr/container",
@@ -3992,9 +3996,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pollycodes/load4wrd": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
