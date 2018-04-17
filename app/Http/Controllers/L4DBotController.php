@@ -9,6 +9,7 @@ use App\Wallet;
 use App\SMSQueue;
 use App\ProductCode;
 use Carbon\Carbon;
+use PollyCodes\Load4wrd\Loading;
 use DB;
 
 use PollyCodes\Load4wrd\Loading;
