@@ -12,8 +12,6 @@ use Carbon\Carbon;
 use PollyCodes\Load4wrd\Loading;
 use DB;
 
-use PollyCodes\Load4wrd\Loading;
-
 class L4DBotController extends Controller
 {
     public static $CMDPrefix;
@@ -557,6 +555,8 @@ class L4DBotController extends Controller
 
       $loading = new Loading();
       $json = $loading->Send($target, $code);
+
+      dd($json);
 
       if($json["status"] == 200) {
         $topup_reference = $json["reference"];
