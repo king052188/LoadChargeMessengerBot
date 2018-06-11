@@ -16,10 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/t/load/{mobile}/{code}', 'SMSController@test_load');
+
 Route::get('/t/{id}', 'L4DHelper@get_wallet_summary');
 
 Route::get('/t/prefix/mobile/{mobile}', 'L4DHelper@prefix');
-
-// Route::get('/t/{network}/{code}', 'L4DHelper@get_load_command');
-
-Route::get('/t/{target}/{code}', 'L4DBotController@load4wrd_send');

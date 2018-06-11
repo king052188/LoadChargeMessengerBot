@@ -27,6 +27,12 @@ class L4DHelper extends Controller
 
     // static method
 
+    public static function set_access_control_allow_origin() {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+        header('Content-Type: application/json');
+    }
+
     public static function access_token() {
       $guid = null;
       $c = null;
@@ -48,7 +54,7 @@ class L4DHelper extends Controller
         case 'SMART':
           $net = 1;
           break;
-        case 'GLOBE':
+        case 'SUN':
           $net = 2;
           break;
         default:
@@ -179,7 +185,7 @@ class L4DHelper extends Controller
 
       $q = DB::select("
         SELECT * FROM
-        tbl_load_product_codes
+        tbl_product_codes_v2
         WHERE network = {$network}
         AND {$cmd}
       ");
@@ -355,7 +361,6 @@ class L4DHelper extends Controller
 
       return false;
     }
-
 
     public function curl_execute($data, $path, $custom_url = null) {
       // Email API

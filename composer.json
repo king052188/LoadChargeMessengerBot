@@ -9,7 +9,11 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+<<<<<<< HEAD
         "pollycodes/load4wrd": "1.*",
+=======
+        "pollycodes/load4wrd": "1.0.*",
+>>>>>>> 7751b423d9912109ae1b22872f26e8beefd6cfdd
         "webpatser/laravel-uuid": "2.*"
     },
     "require-dev": {
