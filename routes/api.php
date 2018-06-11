@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/v2/load4wrd/product-code/get/{network?}', 'ApiController@get_product_codes');
+
 
 Route::get('/v1/verify/{access_token}', 'L4DBotController@verification');
 Route::get('/v1/register/{access_token}', 'L4DBotController@register');
